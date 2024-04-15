@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - 'main'
-      - '30'
+  pull_request:
+    branches:
+      - 'main'
 jobs:
   quality-testing:
     runs-on: ubuntu-latest
@@ -29,6 +31,3 @@ jobs:
         run: npm run test:unit
       - name: build
         run: npm run build
-
-
-      
